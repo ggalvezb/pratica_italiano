@@ -33,8 +33,8 @@
       <v-col cols="12" md="8">
         <v-card class="pa-6" min-height="420">
           <div v-if="preguntaActual">
-            <div class="d-flex justify-space-between align-center mb-4">
-              <h2 class="text-h5 m-0">{{ preguntaActual.texto }}</h2>
+            <!-- MÓVIL: botón arriba -->
+            <div class="d-flex justify-end mb-2 d-md-none">
               <v-btn
                 variant="elevated"
                 @click="nuevaPregunta"
@@ -43,6 +43,24 @@
                 Nueva pregunta
               </v-btn>
             </div>
+
+            <!-- ESCRITORIO: título + botón al lado -->
+            <div class="d-none d-md-flex justify-space-between align-center mb-4">
+              <h2 class="text-h5 m-0">{{ preguntaActual.texto }}</h2>
+              <v-btn
+                variant="elevated"
+                @click="nuevaPregunta"
+                :disabled="!selectedTema"
+              >
+                Nueva pregunt
+              </v-btn>
+            </div>
+
+            <!-- MÓVIL: título debajo del botón -->
+            <div class="d-md-none mb-4">
+              <h2 class="text-h5 text-center m-0">{{ preguntaActual.texto }}</h2>
+            </div>
+
 
             <v-radio-group v-model="respuesta" @update:model-value="onElegir">
               <v-radio
