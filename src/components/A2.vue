@@ -1,11 +1,10 @@
 <template>
+  <v-toolbar flat color="#3A5A40" class="pa-0 mb-4">
+    <v-toolbar-title class="text-h5">Pratica Italiano</v-toolbar-title>
+  </v-toolbar>
+
   <v-container fluid>
-    <v-col cols="12" md="4">
-      <div class="text-h4 font-weight-bold my-4">Pratica Italiano</div>
-      <div class="text-body-1 mb-4 text-medium-emphasis">
-        Selecciona l’area di interesse e rispondi alle domande.
-      </div>
-    </v-col>
+
     
     <v-row>
       <!-- Columna izquierda: Temáticas -->
@@ -82,7 +81,7 @@
           </div>
 
           <div v-else class="text-medium-emphasis">
-            Elige una temática a la izquierda para comenzar.
+            Scegli un argomento a sinistra per iniziare..
           </div>
         </v-card>
       </v-col>
@@ -92,7 +91,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { banco } from '@/data/banco.js'
+import { banco } from '@/data/banco_a2.js'
 
 const temas = [
   { title: 'Passato prossimo', value: 'pp', icon: 'mdi-clock-check-outline' },
@@ -160,4 +159,4 @@ watch(selectedTema, (v) => {
 .bg-green-lighten-4 {
   transition: background 0.2s ease;
 }
-</style>
+</style>@/data/banco_a2.js

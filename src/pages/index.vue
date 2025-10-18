@@ -1,8 +1,8 @@
 <template>
-  <Inicio2 />
+  <A2 />
 </template>
 
 <script setup>
-import Inicio2 from '@/components/Inicio2.vue';
+import A2 from '@/components/A2.vue';
   //
 </script>
